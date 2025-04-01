@@ -1,0 +1,110 @@
+import { StyleSheet } from 'react-native';
+import colors from '../../HelperFiles/Colors';
+const styles = StyleSheet.create({
+container:{
+    flex:1,
+},
+topContainer:{
+    flexDirection:'column',
+    paddingHorizontal:45,
+    alignItems:'center',
+    marginTop:127,
+},
+title:{
+    fontSize:24,
+    fontWeight:'400',
+    color:colors.DARK_BLACK,
+    lineHeight:23,
+},
+subTitle:{
+    fontSize:14,
+    fontWeight:'400',
+    color:colors.LIGHT_VIOLET,
+    textAlign:'center',
+    marginTop:6,
+    lineHeight:28,
+},
+buttonContainer:{
+    flexDirection:'row',
+    marginTop:78,
+    gap:30,
+    marginBottom:38,
+    justifyContent:'center',
+    alignItems:'center',
+    paddingHorizontal:20,
+},
+btnStyle:{
+    flexDirection:'row',
+    height:54,
+    width:160,
+    gap:5,
+    backgroundColor:colors.DEFAULT_WHITE,
+    borderRadius:12,
+    justifyContent:'center',
+    alignItems:'center',
+    elevation:5,
+},
+btnIcon:{
+    height:19,
+    width:19,
+},
+btnTitle:{
+    fontSize:16,
+    fontWeight:'300',
+    lineHeight:18,
+    color:colors.DARK_BLACK,
+},
+inputContainer:{
+    flexDirection:'row',
+    borderColor:colors.BLUR_VIOLET,
+    borderWidth:2,
+    marginBottom:37,
+    borderRadius:12,
+    marginHorizontal:40,
+    alignItems:'center',
+},
+input:{
+    height:50,
+    width:'85%',
+    color:colors.VIOLET,
+    paddingHorizontal:8,
+},
+highlightTxt:{
+    fontSize:16,
+    fontWeight:'400',
+    lineHeight:16,
+    color:colors.LIGHT_GREEN,
+    textAlign:'center',
+    marginTop:14,
+
+},
+bottomTxt:{
+    fontSize:14,
+    fontWeight:'400',
+    lineHeight:16,
+    color:colors.LIGHT_GREEN,
+    textAlign:'center',
+},
+bottomBtnContainer:{
+    marginHorizontal:40,
+},
+icon:{
+    height:14,
+    width:17,
+    marginLeft:10,
+},
+bottomContainer:{
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center',
+    marginTop:100,
+},
+mediumTxt:{
+    fontSize:16,
+    fontWeight:'400',
+    lineHeight:16,
+    color:colors.LIGHT_GREEN,
+    textAlign:'center',
+},
+});
+export default styles;
