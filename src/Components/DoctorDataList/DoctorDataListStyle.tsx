@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
         marginTop: 12,
         paddingVertical: 14,
         paddingHorizontal: 20,
+        marginBottom:20,
     },
     subContainer: {
         flexDirection: 'row',

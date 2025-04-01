@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         color:colors.LIGHT_VIOLET,
         textAlign:'center',
         marginTop:11,
-        marginBottom:35,
+        marginBottom:20,
     },
     logo: {
         width: 70,

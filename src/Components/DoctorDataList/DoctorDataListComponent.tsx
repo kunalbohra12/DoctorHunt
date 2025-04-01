@@ -1,7 +1,6 @@
 import { View, Image, FlatList, Text, RefreshControl, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import styles from './DoctorDataListStyle';
-import images from '../../HelperFiles/Images';
 import { getCartsData } from '../../HelperFiles/api/AuthApiService';
 const DoctorDataListComponent = () => {
 
@@ -21,7 +20,7 @@ const DoctorDataListComponent = () => {
             }
         } catch (error) {
             console.error('Carts data Failed:', error);
-        } 
+        }
     };
     const onRefresh = async () => {
         setRefreshing(true);
@@ -35,39 +34,83 @@ const DoctorDataListComponent = () => {
 
     const renderItem = ({ item }: any) => {
         return (
+            // <View style={styles.itemContainer}>
+            //     {doctorsData.map((item) => (
+            //         <View key={item.id} style={styles.itemContainer}>
+            //             {item.products.map((product) => (
+            //                 <View key={product.id} style={styles.itemContainer}>
+            //                     <View style={styles.subContainer}>
+            //                         <Image source={product.image} style={styles.itemImage} />
+            //                         <View style={styles.contentContainer}>
+            //                             <Text style={styles.highlightTxt}>{product.id}</Text>
+            //                             <Text style={styles.mediumTxt}>{product.specialization}</Text>
+            //                             <Text style={styles.regularTxt}>{product.experience}</Text>
+            //                             <View style={styles.stackContainer}>
+            //                                 <View style={styles.subContainer}>
+            //                                     <View style={styles.roundedView} />
+            //                                     <Text style={styles.regularTxt}>kdshjfh</Text>
+            //                                 </View>
+            //                                 <View style={styles.subContainer}>
+            //                                     <View style={styles.roundedView} />
+            //                                     <Text style={styles.regularTxt}>{product.patientStories}</Text>
+            //                                 </View>
+            //                             </View>
+            //                         </View>
+            //                         <Image source={product.likeIcon} style={styles.icon} />
+            //                     </View>
+            //                     <View style={styles.bottomContainer}>
+            //                         <View style={styles.bottomSubContainer}>
+            //                             <Text style={styles.highlightTxt}>Next Available </Text>
+            //                             <Text style={styles.title}>
+            //                                 10:00 <Text style={styles.subTitle}>{product.category}</Text>
+            //                             </Text>
+            //                         </View>
+            //                         <TouchableOpacity style={styles.buttonContainer}>
+            //                             <Text style={styles.btnTitle}>Book Now</Text>
+            //                         </TouchableOpacity>
+            //                     </View>
+            //                 </View>
+            //             ))}
+            //         </View>
+            //     ))}
+            // </View>
             <View style={styles.itemContainer}>
-               {doctorsData.products.map((product) => (
-                    <View key={product.id} style={styles.itemContainer}>
-                        <View style={styles.subContainer}>
-                            <Image source={product.image} style={styles.itemImage} />
-                            <View style={styles.contentContainer}>
-                                <Text style={styles.highlightTxt}>{product.name}</Text>
-                                <Text style={styles.mediumTxt}>{product.specialization}</Text>
-                                <Text style={styles.regularTxt}>{product.experience}</Text>
-                                <View style={styles.stackContainer}>
-                                    <View style={styles.subContainer}>
-                                        <View style={styles.roundedView} />
-                                        <Text style={styles.regularTxt}>{product.rating}</Text>
+                {doctorsData.map((item) => (
+                    <View key={item.id} style={styles.itemContainer}>
+                        {item.products.map((product) => (
+                            <View key={product.id} style={styles.itemContainer}>
+                                <View style={styles.subContainer}>
+                                    <Image source={product.thumbnail} style={styles.itemImage} />
+                                    <View style={styles.contentContainer}>
+                                        <Text style={styles.highlightTxt}>{product.id}</Text>
+                                        <Text style={styles.mediumTxt}>{product.title}</Text>
+                                        <Text style={styles.regularTxt}>{product.price}</Text>
+                                        <View style={styles.stackContainer}>
+                                            <View style={styles.subContainer}>
+                                                <View style={styles.roundedView} />
+                                                <Text style={styles.regularTxt}>87%</Text>
+                                            </View>
+                                            <View style={styles.subContainer}>
+                                                <View style={styles.roundedView} />
+                                                <Text style={styles.regularTxt}>67 patientStories</Text>
+                                            </View>
+                                        </View>
                                     </View>
-                                    <View style={styles.subContainer}>
-                                        <View style={styles.roundedView} />
-                                        <Text style={styles.regularTxt}>{product.patientStories}</Text>
+                                    <Image source={product.likeIcon} style={styles.icon} />
+                                </View>
+                                <View style={styles.bottomContainer}>
+                                    <View style={styles.bottomSubContainer}>
+                                        <Text style={styles.highlightTxt}>Next Available </Text>
+                                        <Text style={styles.title}>
+                                            10:00 <Text style={styles.subTitle}>{product.category}</Text>
+                                        </Text>
                                     </View>
+                                    <TouchableOpacity style={styles.buttonContainer}>
+                                        <Text style={styles.btnTitle}>Book Now</Text>
+                                    </TouchableOpacity>
                                 </View>
                             </View>
-                            <Image source={product.likeIcon} style={styles.icon} />
-                        </View>
-                        <View style={styles.bottomContainer}>
-                            <View style={styles.bottomSubContainer}>
-                                <Text style={styles.highlightTxt}>Next Available </Text>
-                                <Text style={styles.title}>
-                                    10:00 <Text style={styles.subTitle}>{product.category}</Text>
-                                </Text>
-                            </View>
-                            <TouchableOpacity style={styles.buttonContainer}>
-                                <Text style={styles.btnTitle}>Book Now</Text>
-                            </TouchableOpacity>
-                        </View>
+                        ))}
                     </View>
                 ))}
             </View>
@@ -76,7 +119,7 @@ const DoctorDataListComponent = () => {
     return (
         <View style={styles.listContainer}>
             <FlatList
-                data={cartsData}
+                data={doctorsData}
                 renderItem={renderItem}
                 keyExtractor={(item) => item.id}
                 horizontal={false}

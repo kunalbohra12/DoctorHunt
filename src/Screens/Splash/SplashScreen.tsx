@@ -12,7 +12,7 @@ const SplashScreen = () => {
     const timer = setTimeout(async () => {
       const isLogin = await AsyncStorage.getItem('userData');
       // if(isLogin){
-      navigation.navigate('BottomTabBarScreen');
+      navigation.navigate('OnboardingScreen');
       // }else{
       // navigation.navigate('LoginScreen');
       // }
