@@ -15,7 +15,7 @@ const FindDoctorScreen = () => {
                     backgroundColor={colors.DEFAULT_WHITE}
                     hidden={false}
                 />
-                {/* <View style={[GlobalStyles.gradientBG]}> */}
+                <View style={[GlobalStyles.gradientBG]}>
                     <CustomHeaderComponent title={'Find Doctors'} />
                     <View style={GlobalStyles.searchBar}>
                         <Image source={images.SEARCH_ICON} style={styles.logo} />
@@ -23,7 +23,7 @@ const FindDoctorScreen = () => {
                         <Image source={images.CROSS_ICON} style={styles.logo} />
                     </View>
                     <DoctorDataListComponent />
-                {/* </View> */}
+                </View>
             </SafeAreaView>
         </ImageBackground>
 

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         fontSize:15,
         fontWeight:'400',
         color:colors.DEFAULT_BLACK,
-        width:'50%',
+        width:'60%',
         lineHeight:22,
     },
     itemContainer: {

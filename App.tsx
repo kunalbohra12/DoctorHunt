@@ -25,6 +25,8 @@ import DiagonsticsTestScreen from './src/Screens/DiagonsticsTests/DiagonsticsTes
 import LiveChatScreen from './src/Screens/LiveChat/LiveChatScreen';
 import ProfileScreen from './src/Screens/Profile/ProfileScreen';
 import EditProfileScreen from './src/Screens/EditProfile/EditProfileScreen';
+import SelectTimeScreen from './src/Screens/SelectTime/SelectTimeScreen';
+// import AppointmentScreen from './src/Screens/Appointment/AppointmentScreen';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const App = () => {
@@ -35,22 +37,24 @@ const App = () => {
 }, []);
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen name="SignUpScreen" options={{ headerShown: false }} component={SignUpScreen} />
-        <Stack.Screen name="LoginScreen" options={{ headerShown: false }} component={LoginScreen} />
-        <Stack.Screen name="SplashScreen" options={{ headerShown: false }} component={SplashScreen} />
-        <Stack.Screen name="OnboardingScreen" options={{ headerShown: false }} component={OnboardingScreen} />
-        <Stack.Screen name="SettingsScreen" options={{ headerShown: false }} component={SettingsScreen} />
-        <Stack.Screen name="FindDoctorScreen" options={{ headerShown: false }} component={FindDoctorScreen} />
-        <Stack.Screen name="BottomTabBarScreen" options={{ headerShown: false }} component={BottomTabBarScreen} />
-        <Stack.Screen name="ForgotPasswordComponent" options={{ headerShown: false }} component={ForgotPasswordComponent} />
-        <Stack.Screen name="ResetPasswordComponent" options={{ headerShown: false }} component={ResetPasswordComponent} />
-        <Stack.Screen name="MapScreen" options={{ headerShown: false }} component={MapScreen} />
-        <Stack.Screen name="LoaderComponent" options={{ headerShown: false }} component={LoaderComponent} />
-        <Stack.Screen name="DiagonsticsTestScreen" options={{ headerShown: false }} component={DiagonsticsTestScreen} />
-        <Stack.Screen name="LiveChatScreen" options={{ headerShown: false }} component={LiveChatScreen} />
-        <Stack.Screen name="ProfileScreen" options={{ headerShown: false }} component={ProfileScreen} />
-        <Stack.Screen name="EditProfileScreen" options={{ headerShown: false }} component={EditProfileScreen} />
+      <Stack.Navigator initialRouteName="SplashScreen" screenOptions={{headerShown:false}}>
+        <Stack.Screen name="SignUpScreen"  component={SignUpScreen} />
+        <Stack.Screen name="LoginScreen"  component={LoginScreen} />
+        <Stack.Screen name="SplashScreen"  component={SplashScreen} />
+        <Stack.Screen name="OnboardingScreen"  component={OnboardingScreen} />
+        <Stack.Screen name="SettingsScreen"  component={SettingsScreen} />
+        <Stack.Screen name="FindDoctorScreen"  component={FindDoctorScreen} />
+        <Stack.Screen name="BottomTabBarScreen" component={BottomTabBarScreen} />
+        <Stack.Screen name="ForgotPasswordComponent" component={ForgotPasswordComponent} />
+        <Stack.Screen name="ResetPasswordComponent" component={ResetPasswordComponent} />
+        <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen name="LoaderComponent" component={LoaderComponent} />
+        <Stack.Screen name="DiagonsticsTestScreen" component={DiagonsticsTestScreen} />
+        <Stack.Screen name="LiveChatScreen" component={LiveChatScreen} />
+        <Stack.Screen name="ProfileScreen"  component={ProfileScreen} />
+        <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+        <Stack.Screen name="SelectTimeScreen" component={SelectTimeScreen }/>
+        {/* <Stack.Screen name="AppointmentScreen" component={AppointmentScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

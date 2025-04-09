@@ -7,6 +7,12 @@ const styles = StyleSheet.create({
         marginTop: 22,
         paddingHorizontal: 20,
     },
+    itemOuterContainer:{
+        marginBottom:20,
+    },
+    itemInnerContainer:{
+        marginBottom:20,
+    },
     itemContainer: {
         flexDirection: 'column',
         backgroundColor: colors.DEFAULT_WHITE,
@@ -14,7 +20,7 @@ const styles = StyleSheet.create({
         marginTop: 12,
         paddingVertical: 14,
         paddingHorizontal: 20,
-        marginBottom:20,
+        marginBottom:15,
     },
     subContainer: {
         flexDirection: 'row',
@@ -29,6 +35,7 @@ const styles = StyleSheet.create({
     itemImage: {
         height: 87,
         width: 92,
+        resizeMode: 'cover',
     },
     icon: {
         height: 16,

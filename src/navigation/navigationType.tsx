@@ -1,4 +1,4 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+// import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export type RootStackParamList = {
     SplashScreen:undefined;
@@ -16,4 +16,8 @@ export type RootStackParamList = {
     DiagonsticsTestScreen:undefined;
     ProfileScreen:undefined;
     EditProfileScreen: { title: string,placeholder:string };
+    AppointmentScreen: undefined;
+    DoctorCommentScreen: undefined;
+    SelectTimeScreen: undefined;
+
 };

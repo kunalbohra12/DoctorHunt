@@ -1,8 +1,15 @@
 import { StyleSheet } from 'react-native';
 import colors from './Colors';
+import Fonts from './Fonts';
 const GlobalStyles = StyleSheet.create({
     gradientBG: {
         flex: 1,
+    },
+    alignContainer:{
+        justifyContent:'center',
+        alignItems:'center',
+        flex:1,
+        marginTop:50,
     },
     columnContainer: {
         flexDirection: 'column',
@@ -16,20 +23,16 @@ const GlobalStyles = StyleSheet.create({
     containerPadding: {
         marginHorizontal: 48,
     },
-    alignContainer: {
-        alignItems: 'center',
-    },
+
     btnStyle: {
         alignItems: 'center',
-        color: colors.DEFAULT_WHITE,
         justifyContent: 'center',
         borderRadius: 10,
     },
     btnTxtStyle: {
         fontSize: 18,
-        fontWeight: '500',
-        lineHeight: 21,
-        color: colors.DEFAULT_WHITE,
+        fontFamily: Fonts.RUBIC_MEDIUM,
+        color: colors.VIOLET,
     },
     headerTitle: {
         fontSize: 22,
@@ -62,5 +65,10 @@ const GlobalStyles = StyleSheet.create({
     defaultBg:{
         backgroundColor:colors.DEFAULT_WHITE,
     },
+    regualarTxt:{
+        fontFamily: Fonts.RUBIC_REGULAR,
+        fontSize: 14,
+        color: colors.VIOLET,
+    }
 });
 export default GlobalStyles;

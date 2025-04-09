@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import colors from '../../HelperFiles/Colors';
+import Fonts from '../../HelperFiles/Fonts';
 const styles = StyleSheet.create({
     fullContainer:{
         flex:1,
@@ -11,26 +12,28 @@ const styles = StyleSheet.create({
     container:{
         justifyContent:'center',
         alignItems:'center',
-        marginTop:80,
+        marginTop:91,
     },
     bgImage: {
-       height:460,
-       width:'99%',
+       height:336,
+       width:336,
+       marginTop:20,
     },
     title: {
         fontSize: 28,
-        fontWeight: '500',
         lineHeight: 33,
+        fontFamily:Fonts.RUBIC_MEDIUM,
+        marginTop:84,
         color:colors.LIGHT_BLACK,
+        textAlign:'center',
     },
     subTitle:{
         fontSize: 14,
-        fontWeight: '400',
+        fontFamily:Fonts.RUBIC_MEDIUM,
         lineHeight: 23,
         color:colors.LIGHT_VIOLET,
         textAlign:'center',
         marginTop:11,
-        marginBottom:20,
     },
     logo: {
         width: 70,
@@ -52,6 +55,12 @@ const styles = StyleSheet.create({
     },
     bottomContainer:{
         marginHorizontal:40,
+        marginTop:80,
+    },
+    btnTitle:{
+        fontSize: 18,
+        fontFamily:Fonts.RUBIC_REGULAR,
+        color:colors.DEFAULT_WHITE,
     },
 });
 export default styles;

@@ -4,18 +4,14 @@ import styles from './SplashStyle';
 import images from '../../HelperFiles/Images';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import colors from '../../HelperFiles/Colors';
 const SplashScreen = () => {
   const navigation = useNavigation<NavigationProp<any>>();
   useEffect(() => {
     const timer = setTimeout(async () => {
-      const isLogin = await AsyncStorage.getItem('userData');
-      // if(isLogin){
+      // const isLogin = await AsyncStorage.getItem('userData');
       navigation.navigate('OnboardingScreen');
-      // }else{
-      // navigation.navigate('LoginScreen');
-      // }
     }, 2000);
     return () => clearTimeout(timer);
   }, [navigation]);
@@ -25,7 +21,9 @@ const SplashScreen = () => {
       <StatusBar
         animated={true}
         backgroundColor={colors.DEFAULT_WHITE}
-      />      <LottieView
+        hidden={false}
+      />
+       <LottieView
         style={[styles.lottie]}
         source={require('../../assets/json/Frame.json')}
         autoPlay

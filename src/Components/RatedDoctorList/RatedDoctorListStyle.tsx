@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
         height:17,
         width:20,
     },
+    iconsize:{
+        height:17,
+        width:19,
+    },
     imageContainer: {
         borderRadius: 8,
     },

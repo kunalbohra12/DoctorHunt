@@ -1,16 +1,15 @@
-import { View, Text, Image, FlatList, RefreshControl } from 'react-native';
+import { View, Text, Image, FlatList, RefreshControl, TouchableOpacity } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import styles from './RatedDoctorListStyle';
 import images from '../../HelperFiles/Images';
 import colors from '../../HelperFiles/Colors';
 import { getProducts } from '../../HelperFiles/api/AuthApiService';
-import ShimmerPlaceholder from 'react-native-shimmer-placeholder';
-// import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
 
 const RatedDoctorsListComponent = () => {
     const [isLoading, setLoading] = useState(false);
     const [refreshing, setRefreshing] = useState(false)
     const [productsData, setProductData] = useState([]);
+    const [liked, setLiked] = useState(false);
     // const ShimmerPlaceholder = createShimmerPlaceholder();
     const getProductsAPI = async () => {
         try {
@@ -48,7 +47,9 @@ const RatedDoctorsListComponent = () => {
                 <View style={styles.itemSubContainer}>
                     <View style={styles.setSpacing}>
                         <Text style={styles.title}>{item.title}</Text>
-                        <Image source={images.LIKE_ICON} tintColor={colors.RED} style={styles.icon} />
+                        <TouchableOpacity onPress={() => setLiked(!liked)}>
+                        <Image source={images.LIKE_ICON} tintColor={liked ? colors.RED : colors.GREYISH} style={styles.iconsize} />
+                        </TouchableOpacity>
                     </View>
                     <Text style={styles.subTitle}>{item.category}</Text>
                     <View style={styles.setSpacing}>
@@ -64,6 +65,8 @@ const RatedDoctorsListComponent = () => {
             </View>
         );
     };
+
+
     return (
         <View style={styles.listContainer}>
             <FlatList
